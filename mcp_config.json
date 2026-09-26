@@ -1,0 +1,38 @@
+{
+    "mcpServers":  {
+                       "tinyfish":  {
+                                        "serverUrl":  "https://agent.tinyfish.ai/mcp"
+                                    },
+                       "supabase":  {
+                                        "serverUrl":  "https://mcp.supabase.com/mcp"
+                                    },
+                       "github-mcp-server":  {
+                                                 "command":  "docker",
+                                                 "args":  [
+                                                              "run",
+                                                              "-i",
+                                                              "--rm",
+                                                              "-e",
+                                                              "GITHUB_PERSONAL_ACCESS_TOKEN",
+                                                              "ghcr.io/github/github-mcp-server"
+                                                          ],
+                                                 "env":  {
+                                                             "GITHUB_PERSONAL_ACCESS_TOKEN":  "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+                                                         }
+                                             },
+                       "chrome-devtools-mcp":  {
+                                                   "command":  "npx",
+                                                   "args":  [
+                                                                "-y",
+                                                                "chrome-devtools-mcp@latest"
+                                                            ]
+                                               },
+                       "sequential-thinking":  {
+                                                   "command":  "npx",
+                                                   "args":  [
+                                                                "-y",
+                                                                "@modelcontextprotocol/server-sequential-thinking"
+                                                            ]
+                                               }
+                   }
+}
